@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -23,7 +24,7 @@ export default function Login() {
       <div className="bg-white shadow-lg p-6 sm:p-8 md:p-10 rounded-lg w-full max-w-lg">
         {/* Logo */}
         <div className="flex justify-center mb-4">
-          <img src="/logo.png" alt="logo" className="h-5 w-auto" />
+          <Image src="/logo.png" alt="logo" className="h-5 w-auto" />
         </div>
 
         {/* Heading */}
