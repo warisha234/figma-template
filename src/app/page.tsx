@@ -2,12 +2,10 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-   
-
     <div className="w-screen bg-gray-100">
       <div className="relative w-full h-screen">
         <Image
-          src="/hero-section.jpeg" 
+          src="/hero-section.jpeg"
           alt="hero-section"
           layout="fill"
           objectFit="cover"
@@ -151,6 +149,64 @@ export default function Hero() {
           </div>
         </div>
       </div>
+
+      {/* Essential Images Section */}
+      <section className="bg-white py-12 sm:py-16 md:py-20">
+        <div className="max-w-screen-xl mx-auto px-4">
+          {/* Images with Buttons */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            {/* Image 1 */}
+            <div className="relative">
+              <Image
+                src="/essential1.jpeg"
+                alt="Image 1"
+                width={300} // Specify width in pixels
+                height={300} // Specify height in pixels
+                className="w-full h-72 object-cover rounded-lg"
+              />
+              <div className="absolute bottom-8 left-4 bg-white text-black py-2 px-4 rounded-[20px]">
+                <span>Men's</span>
+              </div>
+            </div>
+
+            {/* Image 2 */}
+            <div className="relative">
+              <Image
+                src="/essential2.jpeg"
+                alt="Image 2"
+                width={300} // Specify width in pixels
+                height={300} // Specify height in pixels
+                className="w-full h-72 object-cover rounded-lg"
+              />
+              <div className="absolute bottom-8 left-4 bg-white text-black py-2 px-4 rounded-[20px]">
+                <span>Women's</span>
+              </div>
+            </div>
+
+            {/* Image 3 */}
+            <div className="relative">
+              <Image
+                src="/essesntial3.jpeg"
+                alt="Image 3"
+                width={300} // Specify width in pixels
+                height={300} // Specify height in pixels
+                className="w-full h-72 object-cover rounded-lg"
+              />
+              <div className="absolute bottom-8 left-4 bg-white text-black py-2 px-4 rounded-[20px]">
+                <span>Kids'</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
+
+
+
+
+
+
+

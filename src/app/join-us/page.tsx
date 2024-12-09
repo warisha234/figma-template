@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import { useState } from "react";
 import Link from "next/link";
@@ -24,7 +24,7 @@ export default function Login() {
       <div className="bg-white shadow-lg p-6 sm:p-8 md:p-10 rounded-lg w-full max-w-lg">
         {/* Logo */}
         <div className="flex justify-center mb-4">
-          <Image src="/logo.png" alt="logo" className="h-5 w-auto" />
+        <Image src="/logo.png" alt="Nike Logo" width={50} height={50} />
         </div>
 
         {/* Heading */}

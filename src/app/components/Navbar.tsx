@@ -8,7 +8,6 @@ export default function Nav() {
     <div className="bg-[#fafafa] flex justify-between items-center px-6 py-2 md:text-[11px] sm:text-[9px] text-[8px] font-medium text-gray-500">
       <Link href="/"><Image src={"/logo1.png"} alt={''} width={24} height={24}/></Link>
       <div>
-  <p className="text-black text-sm bg-white">Skip to main content</p>
 </div>
       <div className="flex md:gap-4 sm:gap-3 gap-2">
         <Link href="/" className="hover:text-gray-800">Find Link Store</Link>
