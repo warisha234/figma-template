@@ -25,8 +25,8 @@ export default function Nav() {
   const topBarLinks = [
     { href: "/contact-us", label: "Find a Store" },
     { href: "/contact-us", label: "Help" },
-    { href: "/sign-up", label: "Join Us" },
-    { href: "/sign-in", label: "Sign In" }
+    { href: "/join-us", label: "Join Us" },
+    { href: "/signin", label: "Sign In" }
   ];
 
   return (
