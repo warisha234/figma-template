@@ -1,128 +1,122 @@
-import React from 'react';
-import { FaTrash, FaHeart } from 'react-icons/fa'; 
-import Image from 'next/image'; 
+'use client'
+import Image from 'next/image';
+import React, { useState } from 'react';
 import Link from 'next/link';
 
-const Cart = () => {
-  return (
-    <div className="w-full h-auto bg-[#ffffff] py-10 px-4">
-      {/* Main Flex Container */}
-      <div className="flex flex-col lg:flex-row justify-center gap-10 lg:gap-16 items-center lg:items-start">
-        {/* Left Section */}
-        <div className="w-full max-w-[750px] text-[#111111]">
-          {/* Free Delivery Info */}
-          <div className="bg-[#E5E5E5] rounded-lg p-[12px] mb-6">
-            <h1 className="text-[18px] font-[600]">Free Delivery</h1>
-            <h2 className="text-[14px] font-[400] mt-2">
-              Applies to orders of ₹ 14,000.00 or more.{' '}
-              <span className="font-[700] underline mt-4 inline-block">View Details</span>
-            </h2>
-          </div>
+// Simulated product data (in a real app, this would come from state or API)
+const cartItems = [
+    {
+        id: 1,
+        name: "Nike Dri-FIT ADV TechKnit Ultra",
+        category: "Men's Short-Sleeve Running Top",
+        color: "Ashen Slate/Cobalt Bliss",
+        size: "L",
+        price: 3895,
+        image: "/cart/image 1.png"
+    },
+    {
+        id: 2,
+        name: "Nike Air Max 97 SE",
+        category: "Men's Shoes",
+        color: "Flat Pewter/Light Bone/Black/White",
+        size: "8",
+        price: 16995,
+        image: "/cart/image 2.png"
+    }
+];
 
-          {/* Bag Section */}
-          <h2 className="text-[20px] font-semibold mb-4">Bag</h2>
+export default function Cart() {
+    const [items, setItems] = useState(cartItems);
 
-          {/* Product Item */}
-          <div className="flex flex-col lg:flex-row gap-4 items-center mb-6 lg:mb-6">
-            {/* Product Image */}
-            <div className="relative w-[150px] h-[150px]">
-              <Image
-                src="/gear1.jpeg" 
-                alt="Product Image"
-                layout="fill"
-                objectFit="cover"
-                className="rounded-lg"
-              />
+    // Calculate total price
+    const subtotal = items.reduce((total, item) => total + item.price, 0);
+    const deliveryFee = subtotal >= 14000 ? 0 : 500;
+    const total = subtotal + deliveryFee;
+
+    // Remove item from cart
+    const removeItem = (id: number) => {
+        setItems(items.filter(item => item.id !== id));
+    };
+
+    return (
+        <div className="min-h-screen bg-white flex items-center justify-center px-4 py-8">
+            <div className="max-w-6xl w-full bg-white">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {/* Bag Items Section */}
+                    <div className="md:col-span-2">
+                        <h2 className="text-2xl font-bold mb-6">Bag</h2>
+                        
+                        {items.map((item) => (
+                            <div 
+                                key={item.id} 
+                                className="flex flex-col md:flex-row items-center justify-between border-b pb-4 mb-4 space-y-4 md:space-y-0"
+                            >
+                                <div className="flex flex-col md:flex-row items-center space-x-4">
+                                    <Image
+                                        src={item.image}
+                                        alt={item.name}
+                                        width={150}
+                                        height={150}
+                                        className="rounded-lg object-cover"
+                                    />
+                                    <div className="text-center md:text-left">
+                                        <h3 className="font-medium text-gray-800">{item.name}</h3>
+                                        <p className="text-sm text-gray-600">{item.category}</p>
+                                        <p className="text-sm text-gray-500">{item.color}</p>
+                                        <p className="text-sm text-gray-500">Size: {item.size}</p>
+                                    </div>
+                                </div>
+                                <div className="text-center md:text-right">
+                                    <p className="font-medium">₹ {item.price.toLocaleString()}</p>
+                                    <button 
+                                        onClick={() => removeItem(item.id)}
+                                        className="text-sm text-red-500 hover:underline mt-2"
+                                    >
+                                        Remove
+                                    </button>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Summary Section */}
+                    <div className="bg-gray-100 rounded-lg p-6 border border-gray-200">
+                        <h2 className="text-lg font-bold mb-4">Summary</h2>
+                        <div className="space-y-2">
+                            <div className="flex justify-between">
+                                <p className="text-gray-600">Subtotal</p>
+                                <p className="font-medium">₹ {subtotal.toLocaleString()}</p>
+                            </div>
+                            <div className="flex justify-between">
+                                <p className="text-gray-600">Estimated Delivery & Handling</p>
+                                <p className="font-medium">
+                                    {deliveryFee === 0 ? 'Free' : `₹ ${deliveryFee.toLocaleString()}`}
+                                </p>
+                            </div>
+                            <div className="flex justify-between text-lg font-bold border-t pt-4">
+                                <p>Total</p>
+                                <p>₹ {total.toLocaleString()}</p>
+                            </div>
+                        </div>
+                        <Link href="/checkout">
+                            <button 
+                                className="w-full bg-black text-white font-medium py-3 rounded-lg mt-4 
+                                hover:bg-gray-800 transition-colors duration-300"
+                            >
+                                Member Checkout
+                            </button>
+                        </Link>
+                    </div>
+                </div>
+
+                {/* Free Delivery Section */}
+                <div className="mt-6 text-center md:text-left text-sm text-gray-500">
+                    Free Delivery applies to orders of ₹ 14,000.00 or more.{' '}
+                    <Link href="#" className="text-blue-500 hover:underline">
+                        View details
+                    </Link>
+                </div>
             </div>
-
-            <div>
-              <div className="flex justify-between">
-                <h3 className="text-[18px] font-[700]">Nike Dri-FIT ADV TechKnit Ultra</h3>
-                <p className="text-[16px] font-[600]">MRP: ₹ 3 895.00</p>
-              </div>
-              <p className="text-[15px] mt-1 text-[#757575]">
-                Men&apos;s Short-Sleeve Running Top <br /> Ashen Slate/Cobalt Bliss
-              </p>
-              <p className="text-[15px] mt-1 text-[#757575]">
-                <span>Size L</span> <span>Quantity 1</span>
-              </p>
-
-              {/* Heart and Delete Icons */}
-              <div className="flex gap-4 mt-4 items-center">
-                <FaHeart className="text-red-500 text-[18px] cursor-pointer" />
-                <FaTrash className="text-gray-600 text-[18px] cursor-pointer" />
-              </div>
-            </div>
-          </div>
-
-          {/* Another Product */}
-          <div className="mt-[100px] md:mt-[50px] md:ml-[190px]">
-            <div>
-              <div className="flex justify-between">
-                <h3 className="text-[18px] font-[700]">Nike Air Max 97 SE</h3>
-                <p className="text-[16px] font-[600]">MRP: ₹ 16 995.00</p>
-              </div>
-              <p className="text-[15px] mt-1 text-[#757575]">
-                Men&apos;s Shoes <br /> Flat Pewter/Light Bone/Black/White
-              </p>
-              <p className="text-[15px] mt-1 text-[#757575]">
-                <span>Size 8</span> <span>Quantity 1</span>
-              </p>
-
-              {/* Heart and Delete Icons */}
-              <div className="flex gap-4 mt-4 items-center">
-                <FaHeart className="text-red-500 text-[18px] cursor-pointer" />
-                <FaTrash className="text-gray-600 text-[18px] cursor-pointer" />
-              </div>
-            </div>
-          </div>
         </div>
-
-        {/* Right Section */}
-        <div className="w-full max-w-[300px] text-[#111111]">
-          {/* Summary Section */}
-          <h2 className="text-[20px] font-semibold mb-4">Summary</h2>
-
-          {/* Subtotal */}
-          <div className="flex justify-between text-[16px] font-[400] mb-4">
-            <p>Subtotal</p>
-            <p>₹ 20,890.00</p>
-          </div>
-
-          {/* Estimated Delivery & Handling */}
-          <div className="flex justify-between text-[16px] font-[400] mb-4">
-            <p>Estimated Delivery & Handling</p>
-            <p>Free</p>
-          </div>
-
-          {/* Horizontal Line */}
-          <div className="border-t border-gray-300 mb-4"></div>
-
-          {/* Total */}
-          <div className="flex justify-between text-[16px] font-[600] mb-4">
-            <p>Total</p>
-            <p>₹ 20,890.00</p>
-          </div>
-
-          {/* Horizontal Line */}
-          <div className="border-t border-gray-300 mb-6"></div>
-
-          {/* Checkout Button */}
-          <Link href="/checkout">
-            <div className="flex justify-center">
-              <button className="w-full py-3 bg-black text-white text-[18px] font-[500] rounded-[30px] hover:bg-gray-800 focus:outline-none">
-                Member Checkout
-              </button>
-            </div>
-          </Link>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default Cart;
-
-
-
-
+    );
+}
