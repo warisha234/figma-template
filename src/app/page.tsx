@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Hero() {
   return (
     <div className="w-screen bg-gray-100">
-      <div className="relative w-full h-screen">
+      <div className="relative w-full h-[70vh] sm:h-[80vh] md:h-screen">
         <Image
           src="/hero-section.jpeg"
           alt="hero-section"
@@ -18,14 +18,14 @@ export default function Hero() {
         <p className="text-sm text-gray-500 uppercase tracking-widest mb-2">
           First Look
         </p>
-        <h1 className="text-4xl md:text-6xl font-extrabold mb-4">
+        <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold mb-4">
           NIKE AIR MAX PULSE
         </h1>
         <p className="text-gray-600 text-lg max-w-2xl mx-auto mb-6">
           Extreme comfort. Hyper durable. Max volume. Introducing the Air Max
           Pulse—designed to push you past your limits and help you go to the max.
         </p>
-        <div className="flex space-x-4">
+        <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
           <button className="px-6 py-3 bg-black text-white font-medium rounded-full hover:bg-gray-800 transition">
             Notify Me
           </button>
@@ -47,7 +47,7 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-3 gap-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {[
             {
               img: "/air1.jpeg",
@@ -68,7 +68,10 @@ export default function Hero() {
               price: "₹ 16,995",
             },
           ].map((product, index) => (
-            <div key={index} className="border border-white rounded-md p-4">
+            <div
+              key={index}
+              className="border border-white rounded-md p-4 hover:shadow-lg transition"
+            >
               <Image
                 src={product.img}
                 alt={product.title}
@@ -76,10 +79,10 @@ export default function Hero() {
                 height={300}
                 className="mx-auto"
               />
-              <div className="mt-4">
-                <h3 className="font-medium text-lg pl-11">{product.title}</h3>
-                <p className="text-gray-500 text-sm pl-11">{product.desc}</p>
-                <p className="font-bold mt-1 pl-11">{product.price}</p>
+              <div className="mt-4 text-center">
+                <h3 className="font-medium text-lg">{product.title}</h3>
+                <p className="text-gray-500 text-sm">{product.desc}</p>
+                <p className="font-bold mt-1">{product.price}</p>
               </div>
             </div>
           ))}
@@ -95,7 +98,7 @@ export default function Hero() {
           height={600}
           className="rounded-lg mx-auto"
         />
-        <h1 className="mt-8 text-4xl font-extrabold text-gray-900">
+        <h1 className="mt-8 text-4xl sm:text-5xl font-extrabold text-gray-900">
           STEP INTO WHAT FEELS GOOD
         </h1>
         <p className="mt-4 text-lg text-gray-700">
@@ -111,7 +114,7 @@ export default function Hero() {
       <div className="bg-white py-16 px-8">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold text-gray-900 mb-12">Gear Up</h2>
-          <div className="grid grid-cols-4 gap-12">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-12">
             {[
               {
                 img: "/gear1.jpeg",
@@ -134,7 +137,10 @@ export default function Hero() {
                 price: "₹ 3,795",
               },
             ].map((item, index) => (
-              <div key={index} className="text-center flex flex-col items-center">
+              <div
+                key={index}
+                className="text-center flex flex-col items-center"
+              >
                 <Image
                   src={item.img}
                   alt={item.title}
@@ -155,18 +161,17 @@ export default function Hero() {
         <div className="max-w-screen-xl mx-auto px-4">
           {/* Images with Buttons */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-
             {/* Image 1 */}
             <div className="relative">
               <Image
                 src="/essential1.jpeg"
                 alt="Image 1"
-                width={300} // Specify width in pixels
-                height={300} // Specify height in pixels
+                width={300} 
+                height={300} 
                 className="w-full h-72 object-cover rounded-lg"
               />
               <div className="absolute bottom-8 left-4 bg-white text-black py-2 px-4 rounded-[20px]">
-                <span>Men's</span>
+                <span>Men&apos;s</span>
               </div>
             </div>
 
@@ -175,12 +180,12 @@ export default function Hero() {
               <Image
                 src="/essential2.jpeg"
                 alt="Image 2"
-                width={300} // Specify width in pixels
-                height={300} // Specify height in pixels
+                width={300} 
+                height={300}
                 className="w-full h-72 object-cover rounded-lg"
               />
               <div className="absolute bottom-8 left-4 bg-white text-black py-2 px-4 rounded-[20px]">
-                <span>Women's</span>
+                <span>Women&apos;s</span>
               </div>
             </div>
 
@@ -189,12 +194,12 @@ export default function Hero() {
               <Image
                 src="/essesntial3.jpeg"
                 alt="Image 3"
-                width={300} // Specify width in pixels
-                height={300} // Specify height in pixels
+                width={300} 
+                height={300} 
                 className="w-full h-72 object-cover rounded-lg"
               />
               <div className="absolute bottom-8 left-4 bg-white text-black py-2 px-4 rounded-[20px]">
-                <span>Kids'</span>
+                <span>Kids&apos;</span>
               </div>
             </div>
           </div>
@@ -203,6 +208,9 @@ export default function Hero() {
     </div>
   );
 }
+
+
+
 
 
 

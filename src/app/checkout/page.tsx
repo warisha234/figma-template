@@ -16,7 +16,7 @@ const Checkout = () => {
                 <div className="w-full max-w-[450px] text-[#111111] lg:flex-[0.65]">
                     <h1 className="text-[18px] font-[600]">How would you like to get your order?</h1>
                     <p className="text-[15px] font-[400] mt-2 text-[#757575]">
-                        Customs regulation for India require a copy of the recipient's KYC...
+                        Customs regulation for India require a copy of the recipient&apos;s KYC...
                     </p>
 
                     {/* Delivery Option */}
@@ -49,7 +49,7 @@ const Checkout = () => {
                                 <h3 className="text-[18px] font-[700] pt-[40px]">Nike Dri-FIT ADV TechKnit Ultra</h3>
                                 <p className="text-[16px] font-[600] pt-[40px]">MRP: ₹ 3 895.00</p>
                             </div>
-                            <p className="text-[15px] mt-1 text-[#757575]">Men's Short-Sleeve Running Top <br /> Ashen Slate/Cobalt Bliss</p>
+                            <p className="text-[15px] mt-1 text-[#757575]">Men&apos;s Short-Sleeve Running Top <br /> Ashen Slate/Cobalt Bliss</p>
                             <p className="text-[15px] mt-1 text-[#757575]"><span>Size L</span> <span>Quantity 1</span></p>
 
                             {/* Icons */}
@@ -75,7 +75,7 @@ const Checkout = () => {
                                 <h3 className="text-[18px] font-[700]">Nike Dri-FIT ADV TechKnit Ultra</h3>
                                 <p className="text-[16px] font-[600]">MRP: ₹ 3 895.00</p>
                             </div>
-                            <p className="text-[15px] mt-1 text-[#757575]">Men's Short-Sleeve Running Top <br /> Ashen Slate/Cobalt Bliss</p>
+                            <p className="text-[15px] mt-1 text-[#757575]">Men&apos;s Short-Sleeve Running Top <br /> Ashen Slate/Cobalt Bliss</p>
                             <p className="text-[15px] mt-1 text-[#757575]"><span>Size L</span> <span>Quantity 1</span></p>
 
                             {/* Icons */}

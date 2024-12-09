@@ -1,5 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
-
 import { FiPhoneCall, FiMail, FiInbox } from "react-icons/fi";
 import { BsPinMap, BsHandThumbsUp, BsHandThumbsDown } from "react-icons/bs";
 
@@ -37,10 +35,10 @@ export default function GetHelpPage() {
               <ul className="pl-2 text-[15px] font-[500] text-[#111111] mt-2">
                 <li>Visa, Mastercard, Diners Club, Discover, American Express, Visa Electron, Maestro </li>
               </ul>
-              <p className="text-[13px] font-[500] text-[#111111]">If you enter your PAN information at checkout, you'll be able to pay for your order with PayTM or a local credit or debit card.</p>
+              <p className="text-[13px] font-[500] text-[#111111]">If you enter your PAN information at checkout, you&apos;ll be able to pay for your order with PayTM or a local credit or debit card.</p>
               <p className="text-[15px] font-[500] text-[#111111] pl-2">Apple Pay</p>
               <p className="text-[15px] font-[500] text-[#111111] mt-2">
-                <span className="font-semibold">Nike Members</span> can store multiple debit or credit cards in their profile for faster checkout. If you're not already a Member, <span className="font-semibold">join us</span> today.
+                <span className="font-semibold">Nike Members</span> can store multiple debit or credit cards in their profile for faster checkout. If you&apos;re not already a Member, <span className="font-semibold">join us</span> today.
               </p>
             </div>
             <div>
@@ -66,17 +64,17 @@ export default function GetHelpPage() {
                 </div>
                 <div>
                   <p className="ext-[18px] font-[700]">Can I pay for my order with multiple methods?</p>
-                  <p className="text-[16px] font-[400] mt-2">No, payment for Nike orders can't be split between multiple payment methods.</p>
+                  <p className="text-[16px] font-[400] mt-2">No, payment for Nike orders can&apos;t be split between multiple payment methods.</p>
                 </div>
                 <div>
                   <p className="ext-[18px] font-[700]">What payment method is accepted for SNKRS orders?</p>
                   <p className="text-[16px] font-[400] mt-2">You can use any accepted credit card to pay for your SNKRS order.</p>
                 </div>
                 <div>
-                  <p className="ext-[18px] font-[700]">Why don't I see Apple Pay as an option?</p>
+                  <p className="ext-[18px] font-[700]">Why don&apos;t I see Apple Pay as an option?</p>
                   <p className="text-[16px] font-[400] mt-2">
-                    To see Apple Pay as an option in the Nike App or on Nike.com, you'll need to use a compatible Apple device running the latest OS,
-                    be signed in to your iCloud account, and have a supported card in your Wallet. Additionally, you'll need to use Safari to use Apple
+                    To see Apple Pay as an option in the Nike App or on Nike.com, you&apos;ll need to use a compatible Apple device running the latest OS,
+                    be signed in to your iCloud account, and have a supported card in your Wallet. Additionally, you&apos;ll need to use Safari to use Apple
                     Pay on Nike.com.
                   </p>
                 </div>
@@ -95,7 +93,7 @@ export default function GetHelpPage() {
               <div className="mt-6">
                 <h3 className="text-[18px] font-[500] text-[#757575]">RELATED</h3>
                 <div className="space-y-2 mt-2">
-                  <p className="underline text-[17px] font-[600] text-[#111111]">WHAT ARE NIKE'S DELIVERY OPTIONS?</p>
+                  <p className="underline text-[17px] font-[600] text-[#111111]">WHAT ARE NIKE&apos;S DELIVERY OPTIONS?</p>
                   <p className="underline text-[17px] font-[600] text-[#111111]">HOW DO I GET FREE DELIVERY ON NIKE ORDERS?</p>
                 </div>
               </div>
@@ -121,7 +119,7 @@ export default function GetHelpPage() {
               </div>
               <div>
                 <FiMail className="text-2xl" />
-                <p className="font-[700] text-[14px]">We'll reply within<br /><span className="font-[500] text-[14px]">five business days</span></p>
+                <p className="font-[700] text-[14px]">We&apos;ll reply within<br /><span className="font-[500] text-[14px]">five business days</span></p>
               </div>
               <div>
                 <BsPinMap className="text-2xl" />

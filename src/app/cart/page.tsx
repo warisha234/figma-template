@@ -1,8 +1,6 @@
-/* eslint-disable react/no-unescaped-entities */
-
 import React from 'react';
-import { FaTrash, FaHeart } from 'react-icons/fa'; // React icons for heart and delete
-import Image from 'next/image'; // Correct way to use Image in Next.js
+import { FaTrash, FaHeart } from 'react-icons/fa'; 
+import Image from 'next/image'; 
 import Link from 'next/link';
 
 const Cart = () => {
@@ -43,7 +41,7 @@ const Cart = () => {
                 <p className="text-[16px] font-[600]">MRP: ₹ 3 895.00</p>
               </div>
               <p className="text-[15px] mt-1 text-[#757575]">
-                Men's Short-Sleeve Running Top <br /> Ashen Slate/Cobalt Bliss
+                Men&apos;s Short-Sleeve Running Top <br /> Ashen Slate/Cobalt Bliss
               </p>
               <p className="text-[15px] mt-1 text-[#757575]">
                 <span>Size L</span> <span>Quantity 1</span>
@@ -65,7 +63,7 @@ const Cart = () => {
                 <p className="text-[16px] font-[600]">MRP: ₹ 16 995.00</p>
               </div>
               <p className="text-[15px] mt-1 text-[#757575]">
-                Men's Shoes <br /> Flat Pewter/Light Bone/Black/White
+                Men&apos;s Shoes <br /> Flat Pewter/Light Bone/Black/White
               </p>
               <p className="text-[15px] mt-1 text-[#757575]">
                 <span>Size 8</span> <span>Quantity 1</span>
